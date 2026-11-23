@@ -1,0 +1,64 @@
+/* OPTES user guide (/guide/, /en/guide/): sits on /assets/site.css + /assets/for.css. Generated pages: site-chrome/guide/build_guide.py */
+.guide{--shot:#ecebe8;--mark:#ffffff}
+.guide .fhead{max-width:900px}
+.guide .gtoc{max-width:1100px;margin-top:36px}
+.guide .gtoc ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px}
+.guide .gtoc a{display:flex;align-items:center;gap:12px;min-height:52px;padding:10px 14px;border-radius:14px;border:1px solid var(--rule);background:var(--s1);color:var(--ink);font-size:15px;line-height:1.4;transition:border-color var(--fast) var(--ease),background var(--fast) var(--ease)}
+.guide .gtoc a:hover{border-color:var(--rule2);background:var(--s2)}
+.guide .n{flex:none;display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;border:1px solid var(--mark);color:var(--mark);font-size:13px;font-weight:600}
+.guide .gsec{max-width:1100px;padding-top:clamp(56px,7vw,96px);scroll-margin-top:calc(var(--nav) + 16px)}
+.guide .gsec h2{display:flex;align-items:center;gap:14px;margin-bottom:22px;font:500 clamp(24px,2.6vw,34px)/1.3 var(--ar)}
+.guide .gsec h2 .n{width:38px;height:38px;font-size:16px}
+.guide .gsec>p{max-width:46em;margin-top:16px;font-size:17px;line-height:1.85;color:var(--ink2)}
+.guide .lat{white-space:nowrap}
+.guide .gsec>p b{color:var(--ink);font-weight:500}
+.guide .gsec a:not(.btn):not(.shot){color:var(--ink);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--rule2)}
+.guide code,.guide kbd{font-family:ui-monospace,"Cascadia Mono",Consolas,monospace;font-size:.88em;direction:ltr;unicode-bidi:isolate;overflow-wrap:anywhere}
+.guide kbd{display:inline-block;padding:1px 6px;border-radius:6px;border:1px solid var(--rule2);background:var(--s2);color:var(--ink)}
+.guide p code,.guide li code{white-space:nowrap;padding:1px 6px;border-radius:6px;background:var(--s2);color:var(--ink)}
+.guide .gcode{max-width:46em;margin-top:14px;padding:14px 16px;border-radius:14px;border:1px solid var(--rule);background:var(--s1);color:var(--ink);text-align:left;white-space:pre-wrap;overflow-wrap:anywhere}
+.guide .gsteps{list-style:none;counter-reset:s;max-width:46em;margin:18px 0 0;padding:0}
+.guide .gsteps li{position:relative;margin-top:12px;padding-inline-start:44px;line-height:1.8;font-size:16px}
+.guide .gsteps li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:1px;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--s3);color:var(--ink);font:600 13px/1 var(--lat)}
+.guide .gfig{max-width:1100px;margin:30px 0 0}
+.guide .gfig.md{max-width:780px}
+.guide .gfig.sm{max-width:520px}
+.guide .gfig .shot{display:block;padding:clamp(6px,1vw,12px);border-radius:var(--rl);background:var(--shot);border:1px solid var(--rule)}
+.guide .gfig .shot:focus-visible{outline:2px solid var(--mark);outline-offset:3px}
+.guide .gfig img{display:block;width:100%;height:auto;border-radius:12px;background:#fafafa}
+.guide figcaption{margin-top:12px;font-size:14px;line-height:1.7;color:var(--ink3)}
+.guide .gkey{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px 28px}
+.guide .gkey li{display:flex;align-items:flex-start;gap:10px;font-size:15px;line-height:1.7;color:var(--ink2)}
+.guide .gkey li>b{flex:none;display:grid;place-items:center;width:24px;height:24px;margin-top:2px;border-radius:50%;background:#141414;border:2px solid var(--mark);color:#fff;font:700 12px/1 var(--lat)}
+.guide .gnote{max-width:880px;margin-top:28px}
+.guide .gnote code{background:var(--s3)}
+.guide .gsec .faq{max-width:900px;margin-top:8px}
+/* illustrations */
+.guide .gmock{position:relative;max-width:1100px;margin:30px 0 0;padding:clamp(14px,2vw,22px);padding-top:44px;border-radius:var(--rl);background:var(--shot);border:1px solid var(--rule);color:#1b1b1b}
+.guide .gmock .tag{position:absolute;top:12px;inset-inline-start:14px;padding:3px 10px;border-radius:999px;background:#fff;border:1px dashed #b9b4a8;color:#5c574d;font-size:12px}
+.guide .gmock figcaption{color:#4d4a44}
+.guide .gmock .ss,.guide .gmock .ins,.guide .gmock .wy{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
+.guide .gmock .win{min-width:0;padding:16px;border-radius:12px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.08);font:14px/1.6 "Segoe UI",var(--ar)}
+.guide .gmock .ss .win{background:#1f4e79;color:#fff;box-shadow:none}
+.guide .gmock .t{display:flex;align-items:center;gap:8px;font-weight:600;font-size:15px}
+.guide .gmock .b{margin-top:8px;color:inherit;opacity:.9;overflow-wrap:anywhere}
+.guide .gmock .lk{margin-top:14px}
+.guide .gmock .bt{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+.guide .gmock .btn2{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:6px;border:1px solid #c9c6bf;background:#f4f3f0;color:#1b1b1b;font-size:13px}
+.guide .gmock .ss .btn2{border-color:rgba(255,255,255,.6);background:transparent;color:#fff}
+.guide .gmock .hl{outline:2.5px solid var(--mark);outline-offset:3px;border-radius:6px}
+.guide .gmock i{display:inline-grid;place-items:center;width:22px;height:22px;margin-inline-end:6px;border-radius:50%;background:#141414;border:2px solid var(--mark);color:#fff;font:700 11px/1 var(--lat);font-style:normal}
+.guide .gmock .hl2{margin-inline-start:8px}
+.guide .gmock .field{margin-top:10px;padding:6px 10px;border:1px solid #c9c6bf;border-radius:4px;background:#fafafa;font:12px/1.5 Consolas,monospace;overflow-wrap:anywhere}
+.guide .gmock .bar{margin-top:12px;height:8px;border-radius:4px;background:#e2e0da;overflow:hidden}
+.guide .gmock .bar span{display:block;width:62%;height:100%;background:#3c8c4a}
+.guide .gmock .box{display:inline-grid;place-items:center;width:16px;height:16px;margin-inline-end:6px;border:1px solid #888;border-radius:3px;font-size:11px}
+.guide .gmock .tiles{margin-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.guide .gmock .tiles span{padding:8px;border-radius:8px;border:1px solid #d6d3cc;text-align:center;font-size:13px}
+.guide .gmock .ok{color:#2f7a3d;font-weight:600}
+@media (max-width:600px){
+  .guide .gsec>p{font-size:16px}
+  .guide .gkey{grid-template-columns:1fr}
+  .guide .gfig .shot{padding:4px;border-radius:14px}
+  .guide .gfig img{border-radius:10px}
+}

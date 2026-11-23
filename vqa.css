@@ -1,0 +1,41 @@
+/* visual-qa-20261113 (site-chrome/visual-qa-20261113): visual + button QA fixes for optes3.com, every page, 16 languages.
+   Loaded LAST on every page (patch.py adds the link before </head>), so it only corrects; it never restyles the brand.
+   Ink / silver / white glass only. */
+
+/* 1. The OPTES 1.2 news card on the ar/en homes: the hero's liquid pool (.lq2-pool, top:-72px) painted over the card's
+      last line and its «See the plans» link. The card now sits above it. */
+aside.news12{position:relative;z-index:2}
+
+/* 2. One white primary button per screen: the page's own call to action stays white; the header's «Sign in» becomes the
+      same glass pill as «Download» next to it (the phone menu keeps its white «Sign in»: the menu is its own screen). */
+header.sn .sn-end>.btn.light{background:var(--lq-glass,var(--s3,#1f1f1f));background-image:none;color:#fff;
+  border:1px solid var(--lq-hair2,rgba(255,255,255,.18));box-shadow:var(--lq-rim,none)}
+header.sn .sn-end>.btn.light:hover{background:rgba(255,255,255,.12);background-image:none;color:#fff}
+
+/* 3. Download buttons on phones: Android labels such as «Android · 64 bits (la plupart des appareils) v1.0.54 · 32.0 MB»
+      did not wrap and ran past both screen edges (clipped by the page). They wrap inside the screen now. */
+@media (max-width:760px){
+  a.dl-auto,.launch .anrow .btn,.nx-downloads .dl-abis .btn{max-width:100%;white-space:normal;text-align:center;
+    height:auto;line-height:1.35;padding-block:10px}
+  a.dl-auto small{white-space:normal;overflow-wrap:anywhere}
+  .launch .anrow{flex-wrap:wrap}
+}
+
+/* 4. Touch targets >= 44 px on phones (header language list, footer, breadcrumbs, section tabs, chips, small links). */
+/*    min-height only (never a smaller box): !important because page sheets set 32-40 px with higher specificity. */
+@media (max-width:760px){
+  header.sn .sn-langs a{min-height:44px!important}
+  footer.sf .sf-cols li a,footer.sf .sf-langs a,footer.sf li a{display:inline-flex;align-items:center;min-height:44px!important}
+  footer.sf li a{min-width:44px;justify-content:flex-start}
+  footer.sf .sf-langs a{min-width:44px;justify-content:center}
+  main a.link{min-width:44px;justify-content:center}
+  .crumbs a{display:inline-flex;align-items:center;justify-content:center;min-height:44px!important;min-width:44px}
+  .nx-section-nav a{min-height:44px!important}
+  a.chip,.chips a{min-height:44px!important;height:auto!important}
+  .btn,.nx-downloads .btn,.btn.sm{min-height:44px!important}
+  a.skip{min-height:44px;display:inline-flex;align-items:center}
+  .nx-motion-toggle{min-height:44px!important}
+  a.nx-scroll,a.dl-more,.nx-notice a,aside.news12>a,.nx-checksum>a,a.lk{display:inline-flex;align-items:center;min-height:44px!important}
+  .ds-tabs [role=tab],button.ds-copy{min-height:44px!important}
+  .nx-alpha-page header a,.nx-alpha-page .card>a,.nx-alpha-page .dl-desk a{display:inline-flex;align-items:center;min-height:44px!important}
+}

@@ -1,0 +1,31 @@
+/* OPTES downloads: «نزّل لجهازك» + the two Android buttons (site-chrome/dl-android-20261107). Ink/silver liquid tokens. */
+[data-dl-auto][hidden],[data-dl-apple][hidden]{display:none!important}
+.dl-auto-wrap{margin:0 0 22px;display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+a.dl-auto{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:56px;padding:12px 30px;border-radius:999px;background:#fff;color:#000;font-weight:700;font-size:1.05rem;text-decoration:none;box-shadow:var(--lq-glow,0 0 14px rgba(255,255,255,.3));transition:transform .25s var(--lq-ease,ease)}
+a.dl-auto:hover{transform:translateY(-1px)}
+a.dl-auto small{font-weight:500;font-size:12px;line-height:1.4;opacity:.72}
+.dl-apple{margin:0 0 18px;font-size:14px;color:var(--lq-pearl,#dcdfe1)}
+.dl-apple a{text-decoration:underline;text-underline-offset:3px}
+/* release page list */
+.dl-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:6px 0 10px}
+.dl-abi{border:1px solid var(--lq-hair2,rgba(255,255,255,.18));background:var(--lq-glass,#101012);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+a.dl-btn{display:flex;flex-direction:column;gap:2px;padding:12px 18px;border-radius:999px;border:1px solid var(--lq-hair2,rgba(255,255,255,.18));color:#f5f5f8;text-decoration:none;text-align:center}
+a.dl-btn b{font-weight:600}
+a.dl-btn span{font-size:12px;color:var(--lq-silver,#9ea1a6)}
+a.dl-btn:hover,a.dl-btn.dl-match{border-color:#fff;background:rgba(255,255,255,.08)}
+.dl-sha{display:block;font:11px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--lq-mist,#8a8c90);overflow-wrap:anywhere;direction:ltr;text-align:left}
+.dl-hint{font-size:14px;color:var(--lq-pearl,#dcdfe1)!important;margin:4px 0 2px}
+.dl-meta,.dl-desk{font-size:13px;color:var(--lq-silver,#9ea1a6)}
+.dl-desk a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,.3)}
+/* home cards (ar/en) */
+.nx-downloads .dl-abis{display:flex;flex-direction:column;align-items:stretch;gap:8px;width:100%}
+.nx-downloads .dl-abis .btn{justify-content:center}
+.nx-downloads .dl-abis .btn.dl-match{border-color:#fff}
+.nx-downloads .dl-v{font-size:11px;opacity:.75;margin-inline-start:6px}
+.nx-downloads article>p.dl-hint{margin:10px 0 4px;font-size:12px}
+.nx-downloads .dl-more{font-size:12px;color:#aaaab3;text-decoration:underline;text-underline-offset:3px}
+/* classic homes (14 languages) */
+.launch .anrow{margin-top:10px}
+.launch .anrow .btn.dl-match{border-color:#fff}
+.launch .dl-auto-wrap{align-items:center;margin:6px 0 14px}
+.launch .dl-apk-sha code{font-size:11px}

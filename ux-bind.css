@@ -1,0 +1,83 @@
+/* ux-unify-20261113 (site-chrome/ux-unify-20261113): the OPTES design tokens (--ux-*, optes-tokens.css) bound onto
+   optes3.com. Loaded LAST on every page with the site chrome (apply.py adds the link before </head>), so it only maps
+   the site's own names onto the shared tokens; it never touches the hero pool, the galaxy or the face.
+   Spec: docs/phase2/ux-unify-2026-11-13/DESIGN-SYSTEM.md (ز.2 point 4, ح «الموقع»). Ink / white / silver only. */
+
+/* 1. page and cards: charcoal (#151516 / #1C1C1E), card corners 18, buttons and menus on motion.* */
+:root{
+  --bg:var(--ux-page);--s1:var(--ux-card);--s2:var(--ux-raised);--s3:#2e2e33;--s4:#38383e;
+  --lq-coal:var(--ux-page);--lq-night:var(--ux-card);--lq-ink:var(--ux-raised);
+  --bg2:var(--ux-card);--bg3:var(--ux-raised);
+  --r:var(--ux-r-card);--rl:var(--ux-r-card);
+  --fast:var(--ux-fast);--base:var(--ux-base);--ease:var(--ux-ease);
+}
+html{background:var(--ux-page)}
+body,.nx-home,.nx-alpha-page{background:radial-gradient(1200px 640px at 50% -10%,#232327,transparent 68%) no-repeat,var(--ux-page)!important}
+
+/* the hero's still water fades into the charcoal page instead of a black edge; the live pool keeps its picture and
+   only its top and bottom edges melt into the page */
+.nx-home .nx-hero::after{background:
+    radial-gradient(closest-side at 50% 50%,transparent 70%,var(--ux-page) 100%) no-repeat,
+    radial-gradient(34vmax 22vmax at var(--lq2-ox,26%) 44%,rgba(214,218,224,.16),rgba(214,218,224,.05) 45%,transparent 70%) no-repeat,
+    radial-gradient(18vmax 12vmax at 72% 30%,rgba(255,255,255,.07),transparent 70%) no-repeat,
+    radial-gradient(60vmax 30vmax at 50% 108%,rgba(158,161,166,.10),transparent 70%) no-repeat}
+.lq2-pool{-webkit-mask-image:linear-gradient(to bottom,transparent,#000 14%,#000 78%,transparent);mask-image:linear-gradient(to bottom,transparent,#000 14%,#000 78%,transparent)}
+
+/* one card for every card: --ux-card, corner 18, the shining rim drawn with the border (no ::before, no blur) */
+.card,.nx-product,.nx-plan,.nx-downloads article,.nx-dev,.nx-code,.nx-demo,
+main.for .task,main.for .mcard,main.for .pcard,main.for .fnote,main.for .fdr,main.for .fend,main.for .plan,main.for .roadmap>div,
+.plans .plan,.nx-alpha-page .card,.nx-alpha-page .notice,.guide .gfig .shot,.lq-frame,aside.news12,.pt-card{
+  background:linear-gradient(var(--ux-card),var(--ux-card)) padding-box,var(--ux-glass-rim) border-box!important;
+  border:var(--ux-glass-rim-w) solid transparent!important;border-radius:var(--ux-r-card)!important;
+  box-shadow:var(--ux-glass-inner),var(--ux-glass-drop)!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;
+  transition:transform var(--ux-base) var(--ux-ease),background var(--ux-fast) var(--ux-ease)}
+.nx-product:hover,.nx-plan:hover,.nx-downloads article:hover,main.for .mcard:hover,main.for .pcard:hover,.card:hover,.plans .plan:hover,.pt-card:hover{
+  background:linear-gradient(var(--ux-raised),var(--ux-raised)) padding-box,var(--ux-glass-rim) border-box!important}
+.nx-notice{background:var(--ux-card)!important;border:1px solid var(--ux-line)!important}
+.nx-section-nav{background:transparent!important;border-color:var(--ux-line)!important;border-radius:var(--ux-r-card)!important;box-shadow:none!important}
+.nx-research-img,.nx-demo.lq-real img,.lq-frame img{border-radius:var(--ux-r-thumb)!important}
+.sn-langs{background:var(--ux-glass-face),var(--ux-glass-tint)!important;border-radius:var(--ux-r-card)!important;box-shadow:var(--ux-glass-inner),var(--ux-e-menu)!important}
+.sn-langs a{border-radius:var(--ux-r-row)}
+.sn-menu{background:color-mix(in srgb,var(--ux-page) 92%,transparent)!important}
+.sn{background:color-mix(in srgb,var(--ux-page) 72%,transparent)!important}
+.sn.lq-scrolled{background:color-mix(in srgb,var(--ux-page) 88%,transparent)!important}
+.sf{background:var(--ux-page)}
+input,select,textarea{border-radius:var(--ux-r-field)}
+
+/* 2. buttons: the primary is pure white, no gradient, no glow, weight 600; the rest stay glass pills.
+      (the header «Sign in» glass pill from visual-qa-20261113 keeps its own, stronger selector) */
+.btn{transition:transform var(--ux-fast) var(--ux-ease),background-color var(--ux-fast) var(--ux-ease),border-color var(--ux-fast) var(--ux-ease),color var(--ux-fast) var(--ux-ease)}
+.btn:hover{box-shadow:var(--lq-rim,none)}
+.btn:active{transform:scale(var(--ux-press-scale))}
+.btn.light:not(header.sn .btn),a.dl-auto,.nx-plan .btn:hover{background:var(--ux-primary)!important;background-image:none!important;color:var(--ux-on-primary)!important;
+  border-color:var(--ux-primary)!important;box-shadow:none!important;font-weight:var(--ux-fw-semibold);text-shadow:none}
+.btn.light:not(header.sn .btn):hover,a.dl-auto:hover{background:#e9e9ea!important;background-image:none!important;box-shadow:none!important}
+a.dl-auto:hover{transform:none}
+.btn.light[aria-disabled="true"],.btn.light[aria-disabled="true"]:hover{background:#e2e2e3!important;color:#3a3a3f!important}
+.btn.light .lq-ripple{background:radial-gradient(circle,transparent 40%,rgba(21,21,22,.14) 60%,transparent 72%)!important}
+:focus-visible{outline:var(--ux-focus-w) solid var(--ux-focus);outline-offset:var(--ux-focus-offset)}
+
+/* menus and summaries on motion.base / motion.fast */
+.sn-lang>summary{transition:border-color var(--ux-fast) var(--ux-ease),background var(--ux-fast) var(--ux-ease)}
+.sn-links a,.sf li a{transition:color var(--ux-fast) var(--ux-ease)}
+
+/* 3. «نزّل لجهازك» in the first screen of the ar/en homes (dl.js picks the file for this device). A second button
+      next to the white «Start on the web», so it is the glass pill; the text link stays for devices dl.js does not
+      know (and for iPhone / Mac, where dl.js hides the button). */
+.nx-actions{flex-wrap:wrap}
+.nx-actions .ux-hero-dl{margin:0;display:inline-flex;flex-direction:row}
+.nx-actions .ux-hero-dl a.dl-auto{min-height:44px;padding:8px 22px;font-size:15px;font-weight:var(--ux-fw-medium);
+  background:var(--lq-glass,var(--ux-card))!important;color:var(--ux-text,#fff)!important;border:1px solid var(--lq-hair2,var(--ux-line))!important;
+  box-shadow:var(--lq-rim,none)!important;flex-direction:column;gap:0}
+.nx-actions .ux-hero-dl a.dl-auto:hover{background:var(--ux-raised)!important}
+.nx-actions .ux-hero-dl a.dl-auto small{font-size:11.5px;opacity:.7;font-weight:400}
+.nx-actions .ux-hero-dl:not([hidden])+.nx-textlink{display:none}
+
+/* 4. /delete-account/: the steps and the one primary button */
+.ux-del{margin:20px 0 34px;padding:22px 24px}
+.ux-del ol{margin:0 0 18px;padding-inline-start:1.3em;list-style:decimal;display:flex;flex-direction:column;gap:8px;color:var(--ink2)}
+.ux-del ol li{line-height:1.7}
+.ux-del .btn.light{min-height:48px;padding:0 26px;font-size:16px}
+.ux-del .ux-del-note{margin-top:12px;font-size:13px;color:var(--ux-text3,#8e9196)}
+
+@media (prefers-reduced-motion:reduce){.btn,.card,.nx-product,.nx-plan{transition:none}.btn:active{transform:none}}

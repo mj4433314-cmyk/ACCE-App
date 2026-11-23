@@ -1,0 +1,77 @@
+/* OPTES /for/ and /en/for/ profession pages. Sits on top of /assets/site.css (tokens, header, footer, .faq, .pills).
+   Generated pages: site-chrome/for/build_for.py. */
+/* each language sets --ar in its page head (build.py STACK) */
+.crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;padding-top:28px;font-size:13px;color:var(--ink3)}
+.crumbs a{display:inline-flex;align-items:center;min-height:32px;color:var(--ink2)}
+.crumbs a:hover{color:var(--ink)}
+.crumbs .sep{color:var(--ink3)}
+.pi{width:16px;height:16px;flex:none}
+.pi.big{width:28px;height:28px}
+.fhead{padding-block:clamp(36px,6vw,80px) 0;max-width:880px}
+.fhead .fic{display:grid;place-items:center;width:64px;height:64px;margin-bottom:22px;border-radius:18px;border:1px solid var(--rule);background:radial-gradient(100% 100% at 30% 15%,#2a2a2a,#0e0e0e 75%);color:var(--ink)}
+.fhead h1{margin-top:10px;font:500 clamp(30px,4.2vw,54px)/1.2 var(--ar)}
+.fhead .lead{margin-top:18px;max-width:42em;font-size:clamp(17px,1.5vw,19px);line-height:1.7;color:var(--ink2)}
+.fhead .row,.fend .row{margin-top:28px;display:flex;flex-wrap:wrap;gap:8px}
+.fhead .sys{margin-top:14px;font-size:13px;color:var(--ink3)}
+.fnote{display:flex;gap:14px;max-width:880px;margin-top:40px;padding:20px 22px;border-radius:var(--r);border:1px solid var(--rule2);background:var(--s1)}
+.fnote svg{flex:none;width:22px;height:22px;margin-top:3px}
+.fnote b{display:block;margin-bottom:4px;font-weight:500}
+.fnote p{font-size:15px;color:var(--ink2)}
+.fsec{padding-top:clamp(56px,7vw,96px)}
+.fsec h2{margin-bottom:28px;font:500 clamp(24px,2.6vw,34px)/1.3 var(--ar)}
+.fsec .eyebrow+h2{margin-top:8px}
+.tasks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.task{display:flex;flex-direction:column;gap:12px;padding:28px;border-radius:var(--r);border:1px solid var(--rule);background:var(--s1)}
+.task h3{font:500 19px/1.45 var(--ar)}
+.task>p{font-size:15px;color:var(--ink2)}
+.task .eg{margin-top:auto;padding:14px 16px;border-radius:18px;border-start-start-radius:6px;background:var(--s3)}
+.task .eg span{display:block;margin-bottom:4px;font-size:12px;color:var(--ink3)}
+.task .eg p{font-size:15px;line-height:1.65}
+.ok{display:inline-flex;align-items:center;gap:6px;color:var(--ink)}
+.ok::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ink)}
+.caplist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;border-top:1px solid var(--rule)}
+.caplist li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:2px 14px;align-items:start;padding:18px 0;border-bottom:1px solid var(--rule)}
+.caplist .st{grid-row:span 2;display:inline-flex;align-items:center;min-height:26px;padding:0 10px;border-radius:999px;background:var(--ink);color:#000;font-size:12px;font-weight:500;white-space:nowrap}
+.caplist .later .st{background:transparent;color:var(--ink);border:1px solid var(--rule2)}
+.caplist b{font-weight:500}
+.caplist .d{font-size:14px;color:var(--ink2)}
+.soon-note{margin-top:18px;font-size:14px;color:var(--ink3)}
+.for .faq{max-width:900px}
+.h-more{margin-top:56px}
+.more{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.mcard,.pcard{border-radius:var(--r);border:1px solid var(--rule);background:var(--s1);transition:background var(--fast) var(--ease),border-color var(--fast) var(--ease)}
+.mcard:hover,.pcard:hover{background:var(--s2);border-color:var(--rule2)}
+.mcard{display:flex;flex-direction:column;gap:8px;padding:24px}
+.mcard b{font-size:17px;font-weight:500}
+.mcard span{font-size:14px;color:var(--ink2)}
+.pgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.pcard{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 16px;align-items:start;padding:22px}
+.pcard .pi{grid-row:span 2;margin-top:2px;color:var(--ink)}
+.pcard b{font-size:17px;font-weight:500}
+.pcard span{font-size:14px;line-height:1.55;color:var(--ink2)}
+.fend{margin-top:clamp(72px,9vw,120px);padding:clamp(48px,7vw,96px) 24px;border-radius:var(--rl);background:var(--s2);text-align:center}
+.fend h2{font:500 clamp(26px,3.2vw,40px)/1.3 var(--ar)}
+.fend p{margin-top:12px;color:var(--ink2)}
+.fend .row{justify-content:center}
+@media (max-width:900px){.tasks,.caplist,.more{grid-template-columns:minmax(0,1fr)}.pgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.pgrid{grid-template-columns:minmax(0,1fr)}.task{padding:22px}.fhead .row .btn,.fend .row .btn{flex:1 1 100%;white-space:normal;text-align:center;padding-block:10px}}
+/* /dialects/: requests and replies as chat bubbles */
+.dnav{margin-top:28px}
+.dsec{padding-top:clamp(56px,7vw,96px)}
+.dsec h2{font:500 clamp(24px,2.6vw,34px)/1.3 var(--ar)}
+.dsec .where{margin-top:6px;color:var(--ink2);font-size:15px}
+.chat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}
+.pair{display:flex;flex-direction:column;gap:10px;padding:18px;border-radius:var(--r);border:1px solid var(--rule);background:var(--s1)}
+.b{max-width:94%;padding:12px 16px;border-radius:18px;font-size:15px;line-height:1.7}
+.b small{display:block;margin-bottom:2px;font-size:12px;opacity:.7}
+.b.me{align-self:flex-start;background:var(--s3);border-start-start-radius:6px}
+.b.op{align-self:flex-end;background:var(--ink);color:#000;border-start-end-radius:6px}
+.faq summary .dl{flex:none;margin-inline-start:auto;padding:2px 10px;border-radius:999px;border:1px solid var(--rule2);font-size:12px;font-weight:400;color:var(--ink2)}
+@media (max-width:900px){.chat{grid-template-columns:minmax(0,1fr)}}
+
+/* privacy page */
+.priv p,.priv li{max-width:70ch;color:var(--ink2);font-size:16px;line-height:1.8}
+.priv p{margin-top:12px}
+.priv ul{margin-top:12px;padding-inline-start:1.2em;display:grid;gap:10px}
+.priv li b{color:var(--ink);font-weight:500}
+.priv a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}

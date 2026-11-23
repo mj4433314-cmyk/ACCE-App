@@ -1,0 +1,253 @@
+/* OPTES 1.5 «زجاج سائل» for optes3.com (2026-11-06). Loaded last on every page, after site.css, redesign.css,
+   sections.css (and dev.css / optes-alpha.css), so it restyles without touching any page's markup or inline scripts.
+   Palette and material are the app's (apps/desktop/src/styles/liquid.css, --lq-*): coal to light, no gold, red only
+   for errors. Source: site-chrome/liquid-20261106/ (apply.py puts it on the pages). */
+:root{
+  --lq-coal:#000001;--lq-night:#090a0c;--lq-ink:#111316;--lq-graphite:#1b1e21;--lq-steel:#46484b;--lq-mist:#626468;
+  --lq-silver:#9ea1a6;--lq-pearl:#dcdfe1;--lq-light:#fff;
+  --lq-ease:cubic-bezier(.22,1,.36,1);
+  --lq-glass:linear-gradient(150deg,rgba(255,255,255,.085),rgba(255,255,255,.018) 55%,rgba(255,255,255,.05));
+  --lq-glass-hi:linear-gradient(150deg,rgba(255,255,255,.13),rgba(255,255,255,.03) 55%,rgba(255,255,255,.08));
+  --lq-hair:rgba(255,255,255,.09);--lq-hair2:rgba(255,255,255,.18);
+  --lq-rim:inset 0 1px .5px rgba(255,255,255,.16),inset 0 -14px 22px -18px rgba(255,255,255,.16);
+  --lq-drop:0 18px 44px -20px #000;
+  --lq-glow:0 0 14px rgba(255,255,255,.42),0 0 42px rgba(255,255,255,.14);
+  --lq-sphere:radial-gradient(circle at 32% 26%,rgba(255,255,255,.85) 0 3%,rgba(255,255,255,.12) 11%,transparent 26%),radial-gradient(circle at 50% 50%,#08090b 56%,#24272b 88%,rgba(255,255,255,.4));
+  /* the site's own tokens, moved onto the 1.5 palette */
+  --bg:#000001;--s1:#090a0c;--s2:#111316;--s3:#1b1e21;--s4:#26292d;
+  --ink:#fff;--ink2:#c4c7cb;--ink3:#9ea1a6;
+  --rule:rgba(255,255,255,.09);--rule2:rgba(255,255,255,.18);
+  /* developers (dev.css) */
+  --bg2:#090a0c;--bg3:#111316;--code:#07080a;--gold:#fff;--gold-soft:rgba(255,255,255,.12);--gold-line:rgba(255,255,255,.34);
+}
+html{background:var(--lq-coal)}
+body,.nx-home,.nx-alpha-page{background:radial-gradient(1200px 640px at 50% -10%,#1a1c20,transparent 68%) no-repeat,var(--lq-coal)!important}
+::selection{background:#e9ebed;color:#000001}
+
+/* ── type: white titles with a soft light, silver text ── */
+h1{color:#fff;text-shadow:var(--lq-glow)}
+h2{color:#fff}
+h3{color:#f4f5f6;font-weight:600}
+
+.nx-hero h1 span{color:var(--lq-silver);text-shadow:none}
+.nx-lead,.nx-heading>p,.nx-product p,main.for .fhead p,main.for .fhead .lead{color:var(--ink2)}
+.nx-kicker,.eyebrow,main.for .fhead .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--lq-silver)}
+.nx-kicker::before,.eyebrow::before{content:"";flex:none;width:10px;height:10px;border-radius:50%;background:var(--lq-sphere);box-shadow:0 0 10px rgba(255,255,255,.28)}
+.center .eyebrow{justify-content:center}
+
+/* ── header: one glass bar ── */
+.sn{background:rgba(0,0,1,.55)!important;border-bottom:1px solid var(--lq-hair)!important;-webkit-backdrop-filter:blur(22px) saturate(140%);backdrop-filter:blur(22px) saturate(140%);box-shadow:inset 0 -1px 0 rgba(255,255,255,.03);transition:background .4s var(--lq-ease),box-shadow .4s}
+.sn.lq-scrolled{background:rgba(9,10,12,.78)!important;box-shadow:0 12px 40px -24px #000,inset 0 -1px 0 rgba(255,255,255,.05)}
+.sn-logo{color:#fff;text-shadow:0 0 12px rgba(255,255,255,.35)}
+.sn-links a{color:var(--ink2)}.sn-links a:hover,.sn-links a[aria-current]{color:#fff}
+.sn-lang>summary{border-radius:999px;border:1px solid transparent;transition:border-color .3s,background .3s}
+.sn-lang>summary:hover,.sn-lang[open]>summary{background:rgba(255,255,255,.06);border-color:var(--lq-hair)}
+.sn-langs{background:rgba(17,19,22,.86)!important;border:1px solid var(--lq-hair2)!important;border-radius:18px!important;box-shadow:var(--lq-rim),0 30px 70px -22px #000!important;-webkit-backdrop-filter:blur(26px) saturate(140%);backdrop-filter:blur(26px) saturate(140%)}
+.sn-langs a{border-radius:10px}
+.sn-langs a:hover,.sn-langs a[aria-current]{background:rgba(255,255,255,.08)}
+.sn-menu{background:rgba(0,0,1,.84)!important;-webkit-backdrop-filter:blur(30px) saturate(140%);backdrop-filter:blur(30px) saturate(140%)}
+.sn-menu nav a{border-color:var(--lq-hair)!important}
+.sn-menu-btn{border-radius:50%}
+
+/* ── buttons: the main action is a lit pearl, the rest are glass ── */
+.btn{position:relative;overflow:clip;border-radius:999px;background:var(--lq-glass);border:1px solid var(--lq-hair2);color:#fff;box-shadow:var(--lq-rim);transition:transform .35s var(--lq-ease),box-shadow .35s,background .25s,border-color .25s}
+.btn:hover{background:var(--lq-glass-hi);border-color:rgba(255,255,255,.28);box-shadow:var(--lq-rim),0 0 24px -6px rgba(255,255,255,.22)}
+.btn.light{background-color:#e2e4e7;background-image:radial-gradient(circle at 34% 22%,#fff,#e2e4e7 55%,#c9ccd0);color:#000001;border-color:rgba(255,255,255,.6);box-shadow:inset 0 1px 0 #fff,inset 0 -6px 12px -6px rgba(0,0,0,.18),0 0 26px -4px rgba(255,255,255,.34)}
+.btn.light:hover{background-color:#eceef0;background-image:radial-gradient(circle at 34% 22%,#fff,#eceef0 55%,#d3d6da);box-shadow:inset 0 1px 0 #fff,0 0 36px -2px rgba(255,255,255,.46)}
+.btn[aria-disabled="true"]{color:var(--ink2)}
+.btn[aria-disabled="true"]:hover{background:var(--lq-glass);box-shadow:var(--lq-rim)}
+.btn.light[aria-disabled="true"],.btn.light[aria-disabled="true"]:hover{background:#e2e4e7;color:#111316;box-shadow:inset 0 1px 0 #fff}
+.nx-plan .btn{background:var(--lq-glass);border:1px solid var(--lq-hair2)}
+.nx-plan .btn:hover{background-color:#e2e4e7;background-image:radial-gradient(circle at 34% 22%,#fff,#e2e4e7 55%,#c9ccd0);color:#000001}
+.lq-ripple{position:absolute;pointer-events:none;border-radius:50%;transform:scale(0);z-index:0;background:radial-gradient(circle,transparent 40%,rgba(255,255,255,.34) 60%,transparent 72%);animation:lq-ripple .75s var(--lq-ease) forwards}
+.btn.light .lq-ripple{background:radial-gradient(circle,transparent 40%,rgba(0,0,1,.16) 60%,transparent 72%)}
+@keyframes lq-ripple{to{transform:scale(1);opacity:0}}
+.nx-textlink{color:#fff}
+
+/* ── one glass for every card ── */
+.card,.nx-product,.nx-plan,.nx-downloads article,.nx-dev,.nx-code,.nx-notice,.nx-demo,
+main.for .task,main.for .mcard,main.for .pcard,main.for .fnote,main.for .fdr,main.for .fend,main.for .plan,main.for .roadmap>div,
+.plans .plan,.nx-section-nav,.nx-alpha-page .card,.nx-alpha-page .notice,.guide .gfig .shot{
+  background:var(--lq-glass)!important;border:1px solid var(--lq-hair)!important;border-radius:22px!important;box-shadow:var(--lq-rim),var(--lq-drop)!important;
+transition:transform .45s var(--lq-ease),border-color .3s,background .3s}
+.nx-product:hover,.nx-plan:hover,.nx-downloads article:hover,main.for .mcard:hover,main.for .pcard:hover,.card:hover{border-color:var(--lq-hair2)!important;background:var(--lq-glass-hi)!important}
+@media (prefers-reduced-motion:no-preference){.nx-product:hover,.nx-plan:hover,main.for .mcard:hover,main.for .pcard:hover{transform:translateY(-3px)}}
+.nx-products{background:none!important;padding:0!important;gap:16px!important;border:0!important;border-radius:0!important;overflow:visible!important}
+.nx-icon{width:56px!important;height:56px!important;border-radius:50%;background:var(--lq-sphere);box-shadow:0 0 22px -4px rgba(255,255,255,.22);color:#fff}
+.nx-icon svg{width:26px!important;height:26px!important}
+.nx-notice{border-radius:999px!important;padding-inline:22px!important;margin-top:8px}
+.nx-pill{border-radius:999px!important;border:1px solid var(--lq-hair2)!important;background:rgba(255,255,255,.05)!important;color:var(--lq-pearl)!important;padding:4px 10px!important}
+.nx-research-img{border-radius:22px!important;border:1px solid var(--lq-hair);box-shadow:var(--lq-rim)}
+.nx-research-img img{filter:saturate(.2) contrast(1.05)!important}
+.nx-code{background:rgba(7,8,10,.82)!important}
+.nx-code pre,.guide .gcode,.code,.doc pre{border-radius:16px}
+.nx-dev{padding:44px!important}
+.nx-plan-price strong{color:#fff;text-shadow:0 0 18px rgba(255,255,255,.22)}
+.nx-plan-price .nx-plan-iqd{border-top-color:var(--lq-hair)!important}
+.nx-trust,.nx-workflow,.nx-notice{border-color:var(--lq-hair)!important}
+
+/* ── the orb: the hero's face lives inside a dark glass sphere ── */
+.nx-orbit.nx-with-face{color:var(--lq-pearl)}
+.nx-orbit.nx-with-face>svg{display:none}
+.nx-orbit.nx-with-face::before{inset:3% 8% 13%!important;border-radius:50%;z-index:0;
+  background:radial-gradient(circle at 30% 24%,rgba(255,255,255,.88) 0 1.1%,rgba(255,255,255,.1) 4.5%,transparent 13%),radial-gradient(circle at 70% 78%,rgba(255,255,255,.07),transparent 26%),radial-gradient(circle at 50% 50%,#050507 60%,#1a1c20 70%,rgba(255,255,255,.34) 70.6%,transparent 71%)!important;
+  box-shadow:0 0 28px rgba(255,255,255,.12)!important}
+.nx-orbit.nx-with-face::after{inset:-4% 2% 6%!important;background:radial-gradient(circle at var(--light-x,50%) var(--light-y,40%),rgba(255,255,255,.07),transparent 46%)!important}
+.nx-original-face{inset:16% 22% 26%!important;border-radius:50%;overflow:hidden;-webkit-mask:radial-gradient(circle,#000 62%,transparent 71%);mask:radial-gradient(circle,#000 62%,transparent 71%)}
+@media (prefers-reduced-motion:no-preference){.nx-orbit.nx-with-face::before{animation:lq-breathe 9s ease-in-out infinite alternate}}
+@keyframes lq-breathe{to{transform:scale(1.02) translateY(-6px)}}
+.nx-motion-toggle{border-radius:999px!important;background:var(--lq-glass)!important;border:1px solid var(--lq-hair2)!important;color:var(--ink2)!important}
+.orbit-caption{color:var(--lq-silver)!important}
+
+/* a quiet sphere behind the top of the inside pages */
+body:not(.nx-home) main{position:relative;isolation:isolate}
+body:not(.nx-home) main::before{content:"";position:absolute;z-index:-1;width:min(52vw,520px);aspect-ratio:1;inset-inline-end:-8%;top:-140px;border-radius:50%;pointer-events:none;opacity:.55;
+  background:radial-gradient(circle at 32% 26%,rgba(255,255,255,.7) 0 1%,rgba(255,255,255,.07) 4%,transparent 13%),radial-gradient(circle,#050507 60%,#16181b 70%,rgba(255,255,255,.2) 70.5%,transparent 71%)}
+@media (prefers-reduced-motion:no-preference){body:not(.nx-home) main::before{animation:lq-float 18s ease-in-out infinite alternate}}
+@keyframes lq-float{to{transform:translate3d(-22px,-18px,0) scale(1.04)}}
+
+/* ── the 1.5 look, from the app itself ── */
+.lq-show15 .lq-frames{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:1040px;margin-inline:auto}
+.lq-frame{margin:0;padding:8px;border-radius:24px;background:var(--lq-glass);border:1px solid var(--lq-hair);box-shadow:var(--lq-rim),0 30px 80px -30px #000}
+.lq-frame img{width:100%;height:auto;border-radius:17px;background:#000}
+.lq-frame figcaption{padding:12px 10px 6px;font-size:13px;color:var(--lq-silver);line-height:1.6}
+.lq-frame.big{grid-column:1/3}
+.lq-phones{display:flex;justify-content:center;gap:clamp(14px,2.4vw,30px);margin-top:46px}
+.lq-phone{margin:0;width:min(250px,30%);text-align:center}
+.lq-phone>div{padding:7px;border-radius:38px;background:var(--lq-glass);border:1px solid var(--lq-hair2);box-shadow:var(--lq-rim),0 30px 70px -26px #000}
+.lq-phone img{width:100%;height:auto;border-radius:31px;background:#000}
+.lq-phone figcaption{margin-top:12px;font-size:13px;color:var(--lq-silver)}
+.lq-phone:nth-child(2){transform:translateY(-22px)}
+.lq-honest{margin:26px auto 0;padding:14px 20px;border-radius:18px;border:1px solid var(--lq-hair);background:rgba(255,255,255,.03);color:var(--ink2);font-size:14px;line-height:1.85;max-width:880px}
+.lq-honest b{color:#fff;font-weight:600}
+.nx-demo.lq-real{transform:none!important;padding:8px!important}
+.nx-demo.lq-real img{width:100%;height:auto;border-radius:16px}
+.nx-demo.lq-real figcaption{padding:12px 10px 4px;font-size:13px;color:var(--lq-silver)}
+
+/* ── faq, footer, small parts ── */
+.nx-faq details,.faq details{border-color:var(--lq-hair)!important}
+.nx-faq summary span{width:30px;height:30px;flex:none;display:grid;place-items:center;border-radius:50%;background:var(--lq-sphere);color:#fff!important;font-size:18px!important;transition:transform .35s var(--lq-ease)}
+.nx-end-wordmark{color:transparent!important;background:linear-gradient(180deg,#2a2d31,#000001 85%);-webkit-background-clip:text;background-clip:text;text-shadow:none}
+.sf{background:linear-gradient(180deg,rgba(255,255,255,.025),transparent 240px);border-top:1px solid var(--lq-hair)!important}
+.sf-cols h4{color:var(--lq-silver)!important}
+.sf li a,.sf-cols a{color:var(--ink2)}.sf li a:hover,.sf-cols a:hover{color:#fff}
+.sf-langs a{color:var(--ink2)}.sf-langs a[aria-current],.sf-langs a:hover{color:#fff}
+.nx-section-nav a,.guide .gtoc a,.pills a{border-radius:999px!important;background:rgba(255,255,255,.04)!important;border:1px solid var(--lq-hair)!important;color:var(--ink2)!important}
+.nx-section-nav a:hover,.guide .gtoc a:hover,.pills a:hover{background:rgba(255,255,255,.1)!important;color:#fff!important;border-color:var(--lq-hair2)!important}
+.guide .gtoc a{border-radius:16px!important}
+main.for .fhead{border-bottom-color:var(--lq-hair)!important;background:none!important}
+main.for .fsec{border-bottom-color:var(--lq-hair)!important}
+input,select,textarea{border-radius:14px}
+.tip{border-radius:14px;background:rgba(17,19,22,.92)!important;border:1px solid var(--lq-hair2)}
+.nx-checksum code{word-break:break-all}
+
+/* developers: same glass in the reading layout */
+.doc .code,.side,.toc{border-color:var(--lq-hair)!important}
+
+
+@media (max-width:760px){
+  .nx-notice{border-radius:22px!important;padding:14px 18px!important}
+  .nx-dev{padding:24px!important}
+  .lq-show15 .lq-frames{grid-template-columns:1fr}.lq-frame.big{grid-column:auto}
+  .lq-phones{justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 4px 26px;margin-inline:calc(var(--gut) * -1);padding-inline:var(--gut);margin-top:30px}
+  .lq-phone{flex:0 0 62%;width:auto;scroll-snap-align:center}
+  .lq-phone:nth-child(2){transform:none}
+  body:not(.nx-home) main::before{width:78vw;top:-90px;opacity:.4}
+}
+@media (prefers-reduced-motion:reduce){.lq-ripple{display:none}.btn,.nx-product,.nx-plan{transition:none}body:not(.nx-home) main::before,.nx-orbit.nx-with-face::before{animation:none!important}}
+@media (prefers-reduced-transparency:reduce){.sn,.sn-menu,.sn-langs,.btn,.card,.nx-product,.nx-plan,.nx-downloads article{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}.sn{background:rgba(9,10,12,.97)!important}}
+/* the Android Alpha page loads its own stylesheet, not site.css: give it the site's type and keep the sphere inside */
+body:not(.nx-home) main{overflow-x:clip}
+.nx-alpha-page{--ar:"IBM Plex Sans Arabic","Segoe UI",Tahoma,Arial,sans-serif;font-family:var(--ar)!important}
+.nx-alpha-page :is(h1,h2,h3,p,a,li,span,button,small,strong,b){font-family:inherit}
+/* ==== OPTES liquid v2 (liquid-v2-20261107/liquid-v2.css) ==== */
+/* OPTES «ماء حي» v2 for optes3.com (2026-11-07, PREVIEW ONLY: liquid-v2.optes3.pages.dev). Loaded after liquid.css.
+   Hero: a live silver-water pool (liquid-v2-gl.js, WebGL) behind the copy, Murphy's orb held in a water drop.
+   Everywhere: silver headings with a moving light band, glass cards with slow caustics, sections that flow in,
+   a falling drop at each section edge. Black / white / silver only. Static under reduced motion. */
+:root{--lq2-x:30%;--lq2-ease:cubic-bezier(.22,1,.36,1)}
+main#main{overflow-x:clip}
+
+/* ── hero pool: static silver water first (paints with the page), the live canvas fades over it ── */
+.nx-hero{isolation:isolate}
+.lq2-pool,.nx-home .nx-hero::after{position:absolute;top:-72px;bottom:0;left:50%;width:100vw;transform:translateX(-50%) translateZ(0);z-index:-1;pointer-events:none;contain:strict}
+.nx-home .nx-hero::after{content:"";
+  background:
+    radial-gradient(closest-side at 50% 50%,rgba(0,0,1,0) 70%,#000001 100%) no-repeat,
+    radial-gradient(34vmax 22vmax at var(--lq2-ox,26%) 44%,rgba(214,218,224,.16),rgba(214,218,224,.05) 45%,transparent 70%) no-repeat,
+    radial-gradient(18vmax 12vmax at 72% 30%,rgba(255,255,255,.07),transparent 70%) no-repeat,
+    radial-gradient(60vmax 30vmax at 50% 108%,rgba(158,161,166,.10),transparent 70%) no-repeat;
+  transition:opacity 1.4s var(--lq2-ease)}
+[dir=rtl] .nx-home .nx-hero::after{--lq2-ox:28%}
+[dir=ltr] .nx-home .nx-hero::after{--lq2-ox:74%}
+.lq2-pool{opacity:0;transition:opacity 1.6s var(--lq2-ease)}
+.lq2-pool canvas{display:block;width:100%;height:100%}
+.lq2-live .lq2-pool{opacity:1}
+.lq2-live.nx-hero::after{opacity:0}
+/* the orb becomes a lens over the live drop: highlight and rim only, the water shows through */
+.lq2-live .nx-orbit.nx-with-face::before{background:
+    radial-gradient(circle at 30% 24%,rgba(255,255,255,.9) 0 1.1%,rgba(255,255,255,.12) 4.5%,transparent 13%),
+    radial-gradient(circle at 50% 50%,rgba(0,0,1,.55) 52%,rgba(0,0,1,.15) 66%,rgba(255,255,255,.30) 70.4%,transparent 71%)!important}
+/* the drop lands once, then settles (the app's pull/drop) */
+@media (prefers-reduced-motion:no-preference){
+  .lq2-js .nx-orbit.nx-with-face{animation:lq2-land 1.5s var(--lq2-ease) .15s both}
+  @keyframes lq2-land{0%{transform:translateY(-34px) scale(.94,1.06);opacity:0}55%{transform:translateY(4px) scale(1.035,.965);opacity:1}78%{transform:translateY(-2px) scale(.99,1.01)}100%{transform:none}}
+}
+
+/* ── headings: silver with a band of light that follows the pointer ── */
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .nx-home .nx-hero h1,.nx-home .nx-section h2,main.for .fhead h1,.plans-hero h1,body:not(.nx-home) main h1{
+    background-image:linear-gradient(100deg,#fff 0%,#fff calc(var(--lq2-x) - 18%),#b9bcc1 calc(var(--lq2-x) - 6%),#fff var(--lq2-x),#d6d9dc calc(var(--lq2-x) + 7%),#fff calc(var(--lq2-x) + 20%),#e9ebed 100%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#fff;text-shadow:none}
+  .nx-home .nx-hero h1 span{background-image:linear-gradient(100deg,#9ea1a6,#c9ccd0 calc(var(--lq2-x) + 10%),#8b8e93);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+}
+
+/* ── glass cards: slow caustics while in view, a highlight under the pointer ── */
+.nx-product,.nx-plan,.nx-downloads article,.lq-frame,main.for .mcard,main.for .pcard,.plans .plan{position:relative;isolation:isolate;overflow:clip}
+@media (hover:hover) and (pointer:fine){
+.nx-product::after,.nx-plan::after,.nx-downloads article::after,main.for .mcard::after,main.for .pcard::after,.plans .plan::after{
+  content:"";position:absolute;inset:-40%;z-index:-1;pointer-events:none;opacity:.5;
+  background:
+    radial-gradient(120px 60px at var(--lq2-mx,70%) var(--lq2-my,0%),rgba(255,255,255,.09),transparent 70%),
+    repeating-radial-gradient(circle at 30% 40%,transparent 0 22px,rgba(255,255,255,.035) 26px,transparent 31px),
+    repeating-radial-gradient(circle at 72% 64%,transparent 0 30px,rgba(255,255,255,.03) 34px,transparent 40px)}
+}
+@media (prefers-reduced-motion:no-preference) and (hover:hover){
+  .lq2-in.nx-product::after,.lq2-in.nx-plan::after,.lq2-in.nx-downloads article::after,main.for .lq2-in.mcard::after,.plans .lq2-in.plan::after{animation:lq2-caustic 16s ease-in-out infinite alternate}
+  .nx-plan:nth-child(2n)::after,.nx-product:nth-child(2n)::after{animation-duration:21s!important;animation-direction:alternate-reverse!important}
+}
+@keyframes lq2-caustic{from{transform:translate3d(-3%,-2%,0) rotate(0deg) scale(1)}to{transform:translate3d(3%,2%,0) rotate(7deg) scale(1.06)}}
+
+/* ── sections flow in like water; each section edge is a silver line a drop falls from ── */
+.nx-home main>.nx-section{position:relative}
+.nx-home main>.nx-section+.nx-section::before{content:"";position:absolute;top:0;inset-inline:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.08) 18%,rgba(255,255,255,.26) 50%,rgba(255,255,255,.08) 82%,transparent);background-size:200% 100%}
+.nx-home main>.nx-section+.nx-section::after{content:"";position:absolute;top:-3px;inset-inline-start:50%;width:7px;height:9px;margin-inline-start:-3.5px;
+  border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:radial-gradient(circle at 35% 30%,#fff,#c9ccd0 45%,#6c6f74);opacity:0;pointer-events:none}
+@media (prefers-reduced-motion:no-preference){
+  .lq2-js .nx-home main>.nx-section:not(.lq2-in),.lq2-js main>.nx-section:not(.lq2-in){opacity:.001;transform:translateY(26px)}
+  .lq2-js main>.nx-section{transition:opacity 1s var(--lq2-ease),transform 1.2s var(--lq2-ease);-webkit-mask-image:linear-gradient(to bottom,#000 45%,rgba(0,0,0,0) 55%);mask-image:linear-gradient(to bottom,#000 45%,rgba(0,0,0,0) 55%);-webkit-mask-size:100% 220%;mask-size:100% 220%;-webkit-mask-position:0 100%;mask-position:0 100%}
+  .lq2-js main>.nx-section.lq2-in{-webkit-mask-position:0 0;mask-position:0 0;transition:opacity 1s var(--lq2-ease),transform 1.2s var(--lq2-ease),-webkit-mask-position 1.4s var(--lq2-ease),mask-position 1.4s var(--lq2-ease)}
+  .lq2-js main>.nx-section.lq2-done{-webkit-mask-image:none;mask-image:none}
+  .nx-home main>.lq2-in.nx-section+.nx-section::before,.nx-home main>.nx-section+.lq2-in.nx-section::before{animation:lq2-glint 2.4s var(--lq2-ease) both}
+  .nx-home main>.nx-section+.lq2-in.nx-section::after{animation:lq2-fall 1.6s cubic-bezier(.55,0,.75,.4) .5s both}
+}
+@keyframes lq2-glint{from{background-position:100% 0}to{background-position:0 0}}
+@keyframes lq2-fall{0%{opacity:0;transform:translateY(0) scale(.6,.6)}15%{opacity:1;transform:translateY(0) scale(.85,1.15)}80%{opacity:.9;transform:translateY(46px) scale(.8,1.25)}100%{opacity:0;transform:translateY(58px) scale(1.6,.3)}}
+
+/* ── the scroll cue is a drop being pulled, then let go ── */
+.nx-scroll::before{content:"";position:absolute;inset-inline-start:-16px;top:50%;margin-top:-6px;width:8px;height:11px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:radial-gradient(circle at 35% 30%,#fff,#c9ccd0 45%,#6c6f74);transform-origin:50% 0}
+@media (prefers-reduced-motion:no-preference){.nx-scroll::before{animation:lq2-pull 2.8s cubic-bezier(.6,0,.4,1) infinite}}
+@keyframes lq2-pull{0%,20%{transform:translateY(0) scale(1,1)}55%{transform:translateY(2px) scale(.8,1.5)}70%{transform:translateY(16px) scale(.9,1.1);opacity:1}86%{transform:translateY(22px) scale(1.5,.4);opacity:0}100%{opacity:0}}
+
+/* ── buttons: the press ripple is water, with a ring that keeps spreading ── */
+.lq-ripple{background:radial-gradient(circle,transparent 38%,rgba(255,255,255,.42) 56%,rgba(255,255,255,.08) 64%,transparent 72%)!important}
+
+@media (prefers-reduced-motion:reduce){
+  .lq2-pool{display:none}
+  .nx-product::after,.nx-plan::after,.nx-downloads article::after{animation:none!important}
+}
+@media (prefers-reduced-transparency:reduce){.lq2-pool{display:none}}
+@media print{.lq2-pool,.nx-home .nx-hero::after{display:none}}
+/* phones: sections still rise in, without the mask (cheaper to paint) */
+@media (hover:none){.lq2-js main>.nx-section{-webkit-mask-image:none!important;mask-image:none!important}}

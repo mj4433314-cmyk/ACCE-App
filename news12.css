@@ -1,0 +1,6 @@
+.news12{max-width:880px;margin:18px auto 0;padding:16px 18px;border:1px solid rgba(255,255,255,.14);border-radius:18px;background:rgba(255,255,255,.04);color:inherit;box-sizing:border-box}
+.news12 .n12-head{display:flex;gap:10px;align-items:center;margin:0 0 8px;font-size:1.05rem;font-weight:600}
+.news12 .n12-tag{font-size:.75rem;padding:2px 9px;border-radius:99px;background:#fff;color:#000}
+.news12 ul{margin:0 0 10px;padding-inline-start:18px;font-size:.92rem;line-height:1.7;opacity:.9}
+.news12 a{color:inherit;text-decoration:underline}
+@media (max-width:920px){.news12{margin-inline:16px}}

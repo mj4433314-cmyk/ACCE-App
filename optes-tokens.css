@@ -1,0 +1,250 @@
+/* OPTES design tokens (--ux-*). GENERATED from tokens.json by gen_tokens.py. Do not edit by hand: change tokens.json and run `python gen_tokens.py`.
+   Binding: light on :root; dark on :root.dark, [data-theme="dark"] (any element) or .ux-dark; with no class/attribute
+   the OS setting decides (prefers-color-scheme). A surface whose own class is the only truth (OPTES CODE) puts
+   data-ux-scheme="class" on <html> to switch the OS rule off. Load this file LAST so its names never collide. */
+
+:root {
+  --ux-glass-rim-w: 1.3px;
+  --ux-glass-blur: blur(16px) saturate(160%);
+  --ux-r-pill: 999px;
+  --ux-r-sheet: 28px;
+  --ux-r-composer: 26px;
+  --ux-r-card: 18px;
+  --ux-r-thumb: 16px;
+  --ux-r-field: 14px;
+  --ux-r-row: 12px;
+  --ux-r-seam: 4px;
+  --ux-font-ar: "IBM Plex Sans Arabic", "Segoe UI Variable", "Segoe UI", "Noto Sans Arabic", Tahoma, sans-serif;
+  --ux-font-en: "IBM Plex Sans Arabic", "Segoe UI Variable", "Segoe UI", -apple-system, system-ui, sans-serif;
+  --ux-font-system: "Segoe UI Variable Text", "Segoe UI", -apple-system, BlinkMacSystemFont, "SF Arabic", "Geeza Pro", "Noto Sans Arabic", system-ui, Tahoma, sans-serif;
+  --ux-font-mono: "Cascadia Code", "Cascadia Mono", Consolas, "SF Mono", Menlo, "JetBrains Mono", ui-monospace, monospace;
+  --ux-font-wordmark: Manrope, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --ux-fs-xs: 11.5px;
+  --ux-fs-sm: 12.5px;
+  --ux-fs-md: 13.5px;
+  --ux-fs-lg: 15px;
+  --ux-fs-xl: 18px;
+  --ux-fs-2xl: 24px;
+  --ux-fs-3xl: 30px;
+  --ux-fs-caption: 12.5px;
+  --ux-fs-ui: 13.5px;
+  --ux-fs-body: 15px;
+  --ux-fs-body-phone: 16px;
+  --ux-fs-title: 18px;
+  --ux-fs-display: 24px;
+  --ux-fw-regular: 400;
+  --ux-fw-medium: 500;
+  --ux-fw-semibold: 600;
+  --ux-fw-bold: 600;
+  --ux-lh-ar: 1.8;
+  --ux-lh-en: 1.6;
+  --ux-lh-ui: 1.45;
+  --ux-lh-ui-ar: 1.6;
+  --ux-lh-heading: 1.35;
+  --ux-lh-tight: 1.25;
+  --ux-ls-ar: 0;
+  --ux-ls-wordmark: 0.16em;
+  --ux-s1: 4px;
+  --ux-s2: 8px;
+  --ux-s3: 12px;
+  --ux-s4: 16px;
+  --ux-s5: 24px;
+  --ux-s6: 32px;
+  --ux-s7: 48px;
+  --ux-s8: 64px;
+  --ux-fast: 120ms;
+  --ux-base: 180ms;
+  --ux-slow: 280ms;
+  --ux-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ux-ease-emph: cubic-bezier(0.22, 1, 0.36, 1);
+  --ux-ease-exit: cubic-bezier(0.65, 0, 0.35, 1);
+  --ux-press-scale: 0.96;
+  --ux-touch-web: 44px;
+  --ux-touch-phone: 48px;
+  --ux-hit-min: 24px;
+  --ux-field-h: 44px;
+  --ux-btn-sm: 32px;
+  --ux-btn-md: 40px;
+  --ux-btn-lg: 48px;
+  --ux-glass-btn: 44px;
+  --ux-tab-bar-h: 62px;
+  --ux-read-w: 760px;
+  --ux-sheet-w: 560px;
+  --ux-sheet-wide-w: 920px;
+  --ux-gutter-m: 16px;
+  --ux-gutter-d: 24px;
+  --ux-side-w: 272px;
+  --ux-focus-w: 2px;
+  --ux-focus-offset: 2px;
+  --ux-page: #fbfbfa;
+  --ux-card: #f1f1ef;
+  --ux-raised: #e6e6e3;
+  --ux-side: #f3f3f1;
+  --ux-line: #dededb;
+  --ux-hairline: rgb(0 0 0 / 7.8%);
+  --ux-text: #141413;
+  --ux-text2: #5f6368;
+  --ux-text3: #66686c;
+  --ux-primary: #000001;
+  --ux-on-primary: #ffffff;
+  --ux-danger: #a33a3a;
+  --ux-success: #2f6b37;
+  --ux-scrim: rgb(0 0 1 / 22%);
+  --ux-focus: #000001;
+  --ux-glass-face: linear-gradient(180deg, rgb(255 255 255 / 92.2%), rgb(242 242 241 / 92.2%));
+  --ux-glass-face-strong: linear-gradient(180deg, #ffffff, #f6f6f5);
+  --ux-glass-tint: rgb(255 255 255 / 54.9%);
+  --ux-glass-hover: rgb(20 20 19 / 5.1%);
+  --ux-glass-inner: inset 0 1px 0 rgb(255 255 255 / 90.2%);
+  --ux-glass-drop: 0 4px 12px rgb(0 0 0 / 12.2%);
+  --ux-glass-rim: conic-gradient(from 90deg, rgb(0 0 0 / 7%) 0turn, rgb(0 0 0 / 25.5%) 0.125turn, rgb(0 0 0 / 12%) 0.22turn, rgb(0 0 0 / 7%) 0.33turn, rgb(0 0 0 / 7%) 0.5turn, rgb(0 0 0 / 30%) 0.625turn, rgb(0 0 0 / 12%) 0.72turn, rgb(0 0 0 / 7%) 0.85turn, rgb(0 0 0 / 7%) 1turn);
+  --ux-e-flat: none;
+  --ux-e-raised: 0 4px 12px rgb(0 0 0 / 12.2%);
+  --ux-e-menu: 0 4px 12px rgb(0 0 0 / 10.2%), 0 18px 40px -16px rgb(0 0 0 / 18%);
+  --ux-e-dialog: 0 4px 12px rgb(0 0 0 / 10.2%), 0 30px 80px -24px rgb(0 0 0 / 22%);
+  color-scheme: light;
+}
+
+/* Windows at 100-125 % scale lights one pixel for 1.3 px: the rim gets a little wider there (OPTES CODE glass.css). */
+@media (max-resolution: 1.4dppx) {
+  :root {
+    --ux-glass-rim-w: 1.8px;
+  }
+}
+
+:root.dark,
+:root[data-theme="dark"],
+[data-theme="dark"],
+.ux-dark {
+  --ux-page: #151516;
+  --ux-card: #1c1c1e;
+  --ux-raised: #26262a;
+  --ux-side: #19191b;
+  --ux-line: #2a2a2d;
+  --ux-hairline: rgb(255 255 255 / 7.8%);
+  --ux-text: #dcdfe1;
+  --ux-text2: #9ea1a6;
+  --ux-text3: #8e9196;
+  --ux-primary: #ffffff;
+  --ux-on-primary: #151516;
+  --ux-danger: #e08a8a;
+  --ux-success: #a9c7ab;
+  --ux-scrim: rgb(0 0 0 / 40%);
+  --ux-focus: #ffffff;
+  --ux-glass-face: linear-gradient(180deg, rgb(255 255 255 / 10.2%), rgb(255 255 255 / 5.5%));
+  --ux-glass-face-strong: linear-gradient(180deg, rgb(255 255 255 / 16.9%), rgb(255 255 255 / 10.2%));
+  --ux-glass-tint: rgb(30 30 32 / 65.9%);
+  --ux-glass-hover: rgb(255 255 255 / 5.9%);
+  --ux-glass-inner: inset 0 1px 0 rgb(255 255 255 / 12.2%);
+  --ux-glass-drop: 0 4px 12px rgb(0 0 0 / 34.9%);
+  --ux-glass-rim: conic-gradient(from 90deg, rgb(255 255 255 / 10%) 0turn, rgb(255 255 255 / 56%) 0.125turn, rgb(255 255 255 / 22%) 0.22turn, rgb(255 255 255 / 10%) 0.33turn, rgb(255 255 255 / 10%) 0.5turn, rgb(255 255 255 / 66%) 0.625turn, rgb(255 255 255 / 22%) 0.72turn, rgb(255 255 255 / 10%) 0.85turn, rgb(255 255 255 / 10%) 1turn);
+  --ux-e-flat: none;
+  --ux-e-raised: 0 4px 12px rgb(0 0 0 / 34.9%);
+  --ux-e-menu: 0 4px 12px rgb(0 0 0 / 34.9%), 0 18px 40px -16px rgb(0 0 0 / 54.9%);
+  --ux-e-dialog: 0 4px 12px rgb(0 0 0 / 34.9%), 0 30px 80px -24px rgb(0 0 0 / 60%);
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light):not(.dark):not([data-theme="light"]):not([data-theme="dark"]):not([data-ux-scheme="class"]) {
+    --ux-page: #151516;
+    --ux-card: #1c1c1e;
+    --ux-raised: #26262a;
+    --ux-side: #19191b;
+    --ux-line: #2a2a2d;
+    --ux-hairline: rgb(255 255 255 / 7.8%);
+    --ux-text: #dcdfe1;
+    --ux-text2: #9ea1a6;
+    --ux-text3: #8e9196;
+    --ux-primary: #ffffff;
+    --ux-on-primary: #151516;
+    --ux-danger: #e08a8a;
+    --ux-success: #a9c7ab;
+    --ux-scrim: rgb(0 0 0 / 40%);
+    --ux-focus: #ffffff;
+    --ux-glass-face: linear-gradient(180deg, rgb(255 255 255 / 10.2%), rgb(255 255 255 / 5.5%));
+    --ux-glass-face-strong: linear-gradient(180deg, rgb(255 255 255 / 16.9%), rgb(255 255 255 / 10.2%));
+    --ux-glass-tint: rgb(30 30 32 / 65.9%);
+    --ux-glass-hover: rgb(255 255 255 / 5.9%);
+    --ux-glass-inner: inset 0 1px 0 rgb(255 255 255 / 12.2%);
+    --ux-glass-drop: 0 4px 12px rgb(0 0 0 / 34.9%);
+    --ux-glass-rim: conic-gradient(from 90deg, rgb(255 255 255 / 10%) 0turn, rgb(255 255 255 / 56%) 0.125turn, rgb(255 255 255 / 22%) 0.22turn, rgb(255 255 255 / 10%) 0.33turn, rgb(255 255 255 / 10%) 0.5turn, rgb(255 255 255 / 66%) 0.625turn, rgb(255 255 255 / 22%) 0.72turn, rgb(255 255 255 / 10%) 0.85turn, rgb(255 255 255 / 10%) 1turn);
+    --ux-e-flat: none;
+    --ux-e-raised: 0 4px 12px rgb(0 0 0 / 34.9%);
+    --ux-e-menu: 0 4px 12px rgb(0 0 0 / 34.9%), 0 18px 40px -16px rgb(0 0 0 / 54.9%);
+    --ux-e-dialog: 0 4px 12px rgb(0 0 0 / 34.9%), 0 30px 80px -24px rgb(0 0 0 / 60%);
+    color-scheme: dark;
+  }
+}
+
+/* a light island inside a dark page (or the explicit light pin) */
+[data-theme="light"],
+.ux-light {
+  --ux-page: #fbfbfa;
+  --ux-card: #f1f1ef;
+  --ux-raised: #e6e6e3;
+  --ux-side: #f3f3f1;
+  --ux-line: #dededb;
+  --ux-hairline: rgb(0 0 0 / 7.8%);
+  --ux-text: #141413;
+  --ux-text2: #5f6368;
+  --ux-text3: #66686c;
+  --ux-primary: #000001;
+  --ux-on-primary: #ffffff;
+  --ux-danger: #a33a3a;
+  --ux-success: #2f6b37;
+  --ux-scrim: rgb(0 0 1 / 22%);
+  --ux-focus: #000001;
+  --ux-glass-face: linear-gradient(180deg, rgb(255 255 255 / 92.2%), rgb(242 242 241 / 92.2%));
+  --ux-glass-face-strong: linear-gradient(180deg, #ffffff, #f6f6f5);
+  --ux-glass-tint: rgb(255 255 255 / 54.9%);
+  --ux-glass-hover: rgb(20 20 19 / 5.1%);
+  --ux-glass-inner: inset 0 1px 0 rgb(255 255 255 / 90.2%);
+  --ux-glass-drop: 0 4px 12px rgb(0 0 0 / 12.2%);
+  --ux-glass-rim: conic-gradient(from 90deg, rgb(0 0 0 / 7%) 0turn, rgb(0 0 0 / 25.5%) 0.125turn, rgb(0 0 0 / 12%) 0.22turn, rgb(0 0 0 / 7%) 0.33turn, rgb(0 0 0 / 7%) 0.5turn, rgb(0 0 0 / 30%) 0.625turn, rgb(0 0 0 / 12%) 0.72turn, rgb(0 0 0 / 7%) 0.85turn, rgb(0 0 0 / 7%) 1turn);
+  --ux-e-flat: none;
+  --ux-e-raised: 0 4px 12px rgb(0 0 0 / 12.2%);
+  --ux-e-menu: 0 4px 12px rgb(0 0 0 / 10.2%), 0 18px 40px -16px rgb(0 0 0 / 18%);
+  --ux-e-dialog: 0 4px 12px rgb(0 0 0 / 10.2%), 0 30px 80px -24px rgb(0 0 0 / 22%);
+  color-scheme: light;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --ux-fast: 1ms;
+    --ux-base: 1ms;
+    --ux-slow: 1ms;
+  }
+}
+:root[data-motion="reduce"] { --ux-fast: 1ms; --ux-base: 1ms; --ux-slow: 1ms; }
+
+/* ---- optional primitives (zero specificity, so a surface's own rules still win) ---- */
+:where(.ux-glass) {
+  position: relative;
+  border-radius: var(--ux-r-card);
+  background: var(--ux-glass-face);
+  box-shadow: var(--ux-glass-inner), var(--ux-glass-drop);
+}
+:where(.ux-glass)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: var(--ux-glass-rim-w);
+  background: var(--ux-glass-rim);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  pointer-events: none;
+}
+/* frost ONLY for pieces that float over moving content (composer, menu, toast, sheet, tab bar) */
+:where(.ux-glass[data-ux-float]) {
+  background: var(--ux-glass-face), var(--ux-glass-tint);
+  -webkit-backdrop-filter: var(--ux-glass-blur);
+  backdrop-filter: var(--ux-glass-blur);
+}
+:where(.ux-glass[data-ux-strong]) { background: var(--ux-glass-face-strong); }
+:where(.ux-focus-ring):focus-visible {
+  outline: var(--ux-focus-w) solid var(--ux-focus);
+  outline-offset: var(--ux-focus-offset);
+}
